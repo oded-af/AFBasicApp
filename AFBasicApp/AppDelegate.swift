@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppsFlyerLib.shared().appsFlyerDevKey = appsFlyerDevKey
         AppsFlyerLib.shared().appleAppID = appleAppID
         
+        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
+        
         AppsFlyerLib.shared().delegate = self
         AppsFlyerLib.shared().isDebug = true
         // iOS 10 or later

@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+            if #available(iOS 14, *) {
+              ATTrackingManager.requestTrackingAuthorization { (status) in }
+            }
     }
 
 
