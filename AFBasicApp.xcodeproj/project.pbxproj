@@ -13,9 +13,11 @@
 		2450FDD4267208F400799D4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2450FDD2267208F400799D4B /* Main.storyboard */; };
 		2450FDD6267208F600799D4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2450FDD5267208F600799D4B /* Assets.xcassets */; };
 		2450FDD9267208F600799D4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2450FDD7267208F600799D4B /* LaunchScreen.storyboard */; };
+		34FC1DC724CF935088B70233 /* Pods_AFBasicApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7402CE04ADB27467F340EF /* Pods_AFBasicApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041A1C070CD1682C89AAEB03 /* Pods-AFBasicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFBasicApp.release.xcconfig"; path = "Target Support Files/Pods-AFBasicApp/Pods-AFBasicApp.release.xcconfig"; sourceTree = "<group>"; };
 		2450FDC9267208F400799D4B /* AFBasicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFBasicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2450FDCC267208F400799D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2450FDCE267208F400799D4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		2450FDD5267208F600799D4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2450FDD8267208F600799D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2450FDDA267208F600799D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F7402CE04ADB27467F340EF /* Pods_AFBasicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFBasicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C23FE8C536944AFB2E3E8B5 /* Pods-AFBasicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFBasicApp.debug.xcconfig"; path = "Target Support Files/Pods-AFBasicApp/Pods-AFBasicApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34FC1DC724CF935088B70233 /* Pods_AFBasicApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				2450FDCB267208F400799D4B /* AFBasicApp */,
 				2450FDCA267208F400799D4B /* Products */,
+				919E7B5A83FB0B6BE65F96BE /* Pods */,
+				A2725D162C1B01E8E2AD3002 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = AFBasicApp;
 			sourceTree = "<group>";
 		};
+		919E7B5A83FB0B6BE65F96BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C23FE8C536944AFB2E3E8B5 /* Pods-AFBasicApp.debug.xcconfig */,
+				041A1C070CD1682C89AAEB03 /* Pods-AFBasicApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A2725D162C1B01E8E2AD3002 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F7402CE04ADB27467F340EF /* Pods_AFBasicApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2450FDDD267208F600799D4B /* Build configuration list for PBXNativeTarget "AFBasicApp" */;
 			buildPhases = (
+				3B1EB564A9C69609A3EA3EBD /* [CP] Check Pods Manifest.lock */,
 				2450FDC5267208F400799D4B /* Sources */,
 				2450FDC6267208F400799D4B /* Frameworks */,
 				2450FDC7267208F400799D4B /* Resources */,
@@ -131,6 +156,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B1EB564A9C69609A3EA3EBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AFBasicApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2450FDC5267208F400799D4B /* Sources */ = {
@@ -283,6 +333,7 @@
 		};
 		2450FDDE267208F600799D4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C23FE8C536944AFB2E3E8B5 /* Pods-AFBasicApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -293,7 +344,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appsflyer.AFBasicApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Appslyer.AFBasicApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,6 +353,7 @@
 		};
 		2450FDDF267208F600799D4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 041A1C070CD1682C89AAEB03 /* Pods-AFBasicApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,7 +364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appsflyer.AFBasicApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Appslyer.AFBasicApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
