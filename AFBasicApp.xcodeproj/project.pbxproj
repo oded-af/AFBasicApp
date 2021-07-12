@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240D40B8268DFD35000477B5 /* afdevkey_donotpush.plist in Resources */ = {isa = PBXBuildFile; fileRef = 240D40B7268DFD35000477B5 /* afdevkey_donotpush.plist */; };
 		2450FDCD267208F400799D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2450FDCC267208F400799D4B /* AppDelegate.swift */; };
 		2450FDCF267208F400799D4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2450FDCE267208F400799D4B /* SceneDelegate.swift */; };
 		2450FDD1267208F400799D4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2450FDD0267208F400799D4B /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		041A1C070CD1682C89AAEB03 /* Pods-AFBasicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFBasicApp.release.xcconfig"; path = "Target Support Files/Pods-AFBasicApp/Pods-AFBasicApp.release.xcconfig"; sourceTree = "<group>"; };
+		240D40B7268DFD35000477B5 /* afdevkey_donotpush.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = afdevkey_donotpush.plist; sourceTree = "<group>"; };
 		2450FDC9267208F400799D4B /* AFBasicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFBasicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2450FDCC267208F400799D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2450FDCE267208F400799D4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +28,7 @@
 		2450FDD5267208F600799D4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2450FDD8267208F600799D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2450FDDA267208F600799D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24B42F742696EF5B0095BCE5 /* AFBasicApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AFBasicApp.entitlements; sourceTree = "<group>"; };
 		5F7402CE04ADB27467F340EF /* Pods_AFBasicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFBasicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C23FE8C536944AFB2E3E8B5 /* Pods-AFBasicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFBasicApp.debug.xcconfig"; path = "Target Support Files/Pods-AFBasicApp/Pods-AFBasicApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +66,9 @@
 		2450FDCB267208F400799D4B /* AFBasicApp */ = {
 			isa = PBXGroup;
 			children = (
+				24B42F742696EF5B0095BCE5 /* AFBasicApp.entitlements */,
 				2450FDCC267208F400799D4B /* AppDelegate.swift */,
+				240D40B7268DFD35000477B5 /* afdevkey_donotpush.plist */,
 				2450FDCE267208F400799D4B /* SceneDelegate.swift */,
 				2450FDD0267208F400799D4B /* ViewController.swift */,
 				2450FDD2267208F400799D4B /* Main.storyboard */,
@@ -149,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240D40B8268DFD35000477B5 /* afdevkey_donotpush.plist in Resources */,
 				2450FDD9267208F600799D4B /* LaunchScreen.storyboard in Resources */,
 				2450FDD6267208F600799D4B /* Assets.xcassets in Resources */,
 				2450FDD4267208F400799D4B /* Main.storyboard in Resources */,
@@ -337,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AFBasicApp/AFBasicApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UQAD4B3U2;
 				INFOPLIST_FILE = AFBasicApp/Info.plist;
@@ -344,7 +351,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Appslyer.AFBasicApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AppsFlyer.AFBasicApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -357,6 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AFBasicApp/AFBasicApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UQAD4B3U2;
 				INFOPLIST_FILE = AFBasicApp/Info.plist;
@@ -364,7 +372,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Appslyer.AFBasicApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AppsFlyer.AFBasicApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

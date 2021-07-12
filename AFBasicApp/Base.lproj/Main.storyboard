@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,30 +13,51 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AFBasicApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yae-iU-pzI">
-                                <rect key="frame" x="162" y="427" width="91" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mc2-PB-L4S">
+                                <rect key="frame" x="81" y="102" width="212" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Show conversion Data"/>
+                                <connections>
+                                    <action selector="showConversionData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BMK-RH-hYG"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2q-uJ-VKN">
+                                <rect key="frame" x="19" y="204" width="338" height="327"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yae-iU-pzI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eH8-bd-GUW"/>
-                            <constraint firstItem="yae-iU-pzI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hLH-Uh-teO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mc2-PB-L4S" secondAttribute="trailing" constant="82" id="0yY-eZ-jKT"/>
+                            <constraint firstItem="m2q-uJ-VKN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="6rg-RE-bTW"/>
+                            <constraint firstItem="m2q-uJ-VKN" firstAttribute="firstBaseline" secondItem="Mc2-PB-L4S" secondAttribute="baseline" constant="73.5" id="8Ro-bI-fdv"/>
+                            <constraint firstItem="Mc2-PB-L4S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="81" id="D6J-3x-Rvd"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="m2q-uJ-VKN" secondAttribute="bottom" constant="136" id="Sal-JS-WI9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m2q-uJ-VKN" secondAttribute="trailing" constant="2" id="hhl-tY-smh"/>
+                            <constraint firstItem="Mc2-PB-L4S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="102" id="we8-ZP-btk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="conversionDataParams" destination="m2q-uJ-VKN" id="f2a-sO-n0P"/>
+                        <outlet property="showConversionDataButton" destination="Mc2-PB-L4S" id="qJa-hC-dQK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+            <point key="canvasLocation" x="134.78260869565219" y="92.410714285714278"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

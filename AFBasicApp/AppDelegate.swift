@@ -3,11 +3,15 @@ import AppsFlyerLib
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var ConversionData: [AnyHashable: Any]? = nil
     var window: UIWindow?
+    
     let defaults = UserDefaults.standard
     //MARK: LifeCycle
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // 1 - Get AppsFlyer preferences from .plist file
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        print("App version is \(appVersion!)")
         guard let propertiesPath = Bundle.main.path(forResource: "afdevkey_donotpush", ofType: "plist"),
             let properties = NSDictionary(contentsOfFile: propertiesPath) as? [String:String] else {
                 fatalError("Cannot find `afdevkey_donotpush`")
@@ -16,30 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                    let appleAppID = properties["appleAppID"] else {
             fatalError("Cannot find `appsFlyerDevKey` or `appleAppID` key")
         }
-        // 2 - Replace 'appsFlyerDevKey', `appleAppID` with your DevKey, Apple App ID
         AppsFlyerLib.shared().appsFlyerDevKey = appsFlyerDevKey
         AppsFlyerLib.shared().appleAppID = appleAppID
         
         AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
-        
-        AppsFlyerLib.shared().delegate = self
+        //  Set isDebug to true to see AppsFlyer debug logs
         AppsFlyerLib.shared().isDebug = true
-        // iOS 10 or later
-        if #available(iOS 10, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { _, _ in }
-            application.registerForRemoteNotifications()
-        }
-        // iOS 9 support - Given for reference. This demo app supports iOS 13 and above
-        else {
-            application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-            application.registerForRemoteNotifications()
-        }
+        AppsFlyerLib.shared().delegate = self
+        
+        NotificationCenter.default.addObserver(self,
+                selector: #selector(didBecomeActiveNotification),
+                // For Swift version < 4.2 replace name argument with the commented out code
+                name: UIApplication.didBecomeActiveNotification, //.UIApplicationDidBecomeActive for Swift < 4.2
+                object: nil)
+        
         return true
     }
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Start the SDK (start the IDFA timeout set above, for iOS 14 or later)
-        AppsFlyerLib.shared().start()
-    }
+    @objc func didBecomeActiveNotification() {
+            AppsFlyerLib.shared().start()
+        }
     // Open Univerasal Links
     // For Swift version < 4.2 replace function signature with the commented out code:
     // func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
@@ -76,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: AppsFlyerLibDelegate{
     // Handle Organic/Non-organic installation
     func onConversionDataSuccess(_ installData: [AnyHashable: Any]) {
+        self.ConversionData = installData
         print("onConversionDataSuccess data:")
         for (key, value) in installData {
             print(key, ":", value)
@@ -98,7 +98,8 @@ extension AppDelegate: AppsFlyerLibDelegate{
         }
     }
     func onConversionDataFail(_ error: Error) {
-        print(error)
+        print("onConversionDataFail called")
+        print("Error: \(error)")
     }
     //Handle Deep Link
     func onAppOpenAttribution(_ attributionData: [AnyHashable : Any]) {
